@@ -23,7 +23,7 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--window-size=1920x1080")
 chrome_options.add_argument("--disable-gpu")
-chrome_options.binary_location = "/usr/bin/google-chrome"
+
 
 
 
@@ -177,7 +177,7 @@ def check_and_notify_user():
 # niche wala correct hain  
 def scrap_up_to_date_movie():
     
-    movie_lists = WebDriverWait(driver,1).until(
+    movie_lists = WebDriverWait(driver,30).until(
         lambda driver: driver.find_elements(By.XPATH,"//div[@class='fl']")
     )
 
