@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 from telegram_api import telegram_message_forward
 from logging_info import log_message
 
@@ -25,7 +26,8 @@ chrome_options.add_argument("--disable-gpu")
 
 
 
-service = Service(executable_path=r"C:\Users\Satish Yadav\.wdm\drivers\chromedriver\win64\131.0.6778.204\chromedriver-win32\chromedriver.exe")
+# service = Service(executable_path=r"C:\Users\Satish Yadav\.wdm\drivers\chromedriver\win64\131.0.6778.204\chromedriver-win32\chromedriver.exe")
+service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service,options=chrome_options)
 
 
